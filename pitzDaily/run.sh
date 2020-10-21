@@ -13,4 +13,4 @@ runParallel $application
 
 runApplication reconstructPar
 
-simpleFoam -postProcess -latestTime
+simpleFoam -postProcess -latestTime > log.postProcess
