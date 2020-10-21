@@ -46,3 +46,10 @@ Note: The building process is fast on a parallel machine, but it will be quite s
 > ./Allwmake -j
 
 > ./makeParaView
+
+7. (optional) create an alias
+
+Add at the end your bashrc (*~/.bashrc*) :
+
+> alias of7x="source $HOME/OpenFOAM/OpenFOAM-7/etc/bashrc"
+
