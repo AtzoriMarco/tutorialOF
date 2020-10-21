@@ -16,9 +16,13 @@ Tested using the free version of VMware and Ubuntu 20.04. OpenFOAM (and Paraview
 3. create folder and download source code:
 
 > cd
+
 > mkdir OpenFOAM
+
 > cd OpenFOAM
+
 > git clone https://github.com/OpenFOAM/OpenFOAM-7.git
+
 > git clone https://github.com/OpenFOAM/ThirdParty-7.git
 
 These set of commands should create a folder call OpenFOAM in your home and, inside this folder, the 2 folders OpenFOAM-7 and ThirdParty-7.
@@ -30,6 +34,7 @@ These set of commands should create a folder call OpenFOAM in your home and, ins
 5. (parallel) compilation, for OpenFOAM
 
 > cd OpenFOAM-7
+
 > ./Allwmake -j
 
 Note: The building process is fast on a parallel machine, but it will be quite slow on your laptop and even slower on the virtual machine. It can take a couple of hours for Openfoam (and a little less for Paraview).
@@ -37,5 +42,7 @@ Note: The building process is fast on a parallel machine, but it will be quite s
 6. (parallel) compilation, for Third Party and Paraview
 
 > cd ../ThirdParty-7
+
 > ./Allwmake -j
+
 > ./makeParaView
