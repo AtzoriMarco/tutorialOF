@@ -12,3 +12,5 @@ runApplication decomposePar
 runParallel $application
 
 runApplication reconstructPar
+
+simpleFoam -postProcess -latestTime

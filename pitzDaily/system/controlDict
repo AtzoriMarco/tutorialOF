@@ -47,6 +47,8 @@ runTimeModifiable true;
 
 functions
 {
+    #includeFunc wallShearStress
+    #includeFunc wallShearStressGraph
     #includeFunc streamlines
 }
 
