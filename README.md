@@ -21,37 +21,30 @@ Tested using the free version of *VMware* and *Ubuntu 20.04*. OpenFOAM (and Para
 
 3. create folder and download source code:
 
-> cd
-
-> mkdir OpenFOAM
-
-> cd OpenFOAM
-
-> git clone https://github.com/OpenFOAM/OpenFOAM-7.git
-
-> git clone https://github.com/OpenFOAM/ThirdParty-7.git
+> cd  
+> mkdir OpenFOAM  
+> cd OpenFOAM  
+> git clone https://github.com/OpenFOAM/OpenFOAM-7.git  
+> git clone https://github.com/OpenFOAM/ThirdParty-7.git  
 
 These set of commands should create a folder call OpenFOAM in your home and, inside this folder, the 2 folders *OpenFOAM-7* and *ThirdParty-7*.
 
 4. Load environmental variables:
 
-> source OpenFOAM/OpenFOAM-7/etc/bashrc
+> source OpenFOAM/OpenFOAM-7/etc/bashrc  
 
 5. (parallel) compilation, for OpenFOAM
 
-> cd OpenFOAM-7
-
-> ./Allwmake -j
+> cd OpenFOAM-7  
+> ./Allwmake -j  
 
 Note: The building process is fast on a parallel machine, but it will be quite slow on your laptop and even slower on the virtual machine. It can take a couple of hours for OpenFOAM (and a little less for Paraview).
 
 6. (parallel) compilation, for Third Party and Paraview
 
-> cd ../ThirdParty-7
-
-> ./Allwmake -j
-
-> ./makeParaView
+> cd ../ThirdParty-7  
+> ./Allwmake -j  
+> ./makeParaView  
 
 7. (optional) create an alias:
 
@@ -62,13 +55,13 @@ Add at the end your bashrc (*~/.bashrc*) :
 ## 2. Running your first case
 
 
->├── 0
->│   ├── p
->│   └── U
->├── constant
->│   └── transportProperties
->└── system
->    ├── blockMeshDict
->    ├── controlDict
->    ├── fvSchemes
->    └── fvSolution
+>├── 0  
+>│   ├── p  
+>│   └── U  
+>├── constant  
+>│   └── transportProperties  
+>└── system  
+>    ├── blockMeshDict  
+>    ├── controlDict  
+>    ├── fvSchemes  
+>    └── fvSolution  
