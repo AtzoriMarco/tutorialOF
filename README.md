@@ -67,8 +67,8 @@ The commands tut and run move to $FOAM_TUTORIAL and $FOAM_RUN, respectively.
 ### 2.2 Structure of the case
 
 Entering cavity, you will see the following files and folders
->.
->├── **0** 
+>.  
+>├── **0**   
 >│   ├── p  
 >│   └── U  
 >├── **constant**  
@@ -102,8 +102,26 @@ For more advanced examples of its capabilities, I suggest having a look at [this
 
 Assuming a proper *blockMeshDict* is provided and located in the system folder, use the command:
 > blockMesh  
+
 to create the mesh in a dedicated folder (*constant/polyMesh/*).
 
 Note that, after creating a mesh, either with *blockMesh*, *snappyHexMesh* or from a converter, it is good practice to use the command *checkMesh*, which provides information about the mesh quality (in this case, it will be of no concern).
 
 ### 2.4 Boundary conditions and Physical properties
+
+Initial and boundary conditions in OpenFOAM are assigned together, using the same files that also contain the values of the physical variables. Such files have a common structure and are located in folders named after the corresponding time step - typically 0 for the initial condition.
+
+In this tutorial, the pressure, *p*, and the velocity, *U*, are the only variables.
+Note that physical vectors (such as *U*) are always three-dimensional in OpenFOAM. Running two-dimensional cases, such as "cavity", does not alter the dimensionality of vectors, but prevent solving the equations in one of the directions, which is identified by the keyword empty in the boundary conditions.
+Each of the "variable" files contain:
+1. the physical dimension of the variable, in units of the Internation System (second, metre, kilogram, ampere, kelvin, mole, candela). Note that each scalar or vector field is defined with its dimensions. Nonetheless, it is always possible to use OpenFOAM using "dimensionless" variables giving scaled values (as in this example).
+2. the value of the variable in the domain (internalField). In this example, the fluid is at rest at t=0.
+3. the boundary conditions, defined for each of the "boundaries" created in blockMesh.
+
+Physical properties of the fluid, such as viscosity and density, are set in the dictionary transportProperties in the constant folder (in this case, only the kinematic viscosity is needed).
+
+
+### 2.5 General settings
+In every OpenFOAM case, three files in the system folder determine general settings of the simulation:
+1. The file controlDict. In this file, you can specify: start and end times of the simulation, time interval and output frequency, format and precision. In this example, the simulation will start at t=0 and end at t=0.5, using a time interval of 0.005 and writing a full outpost in ASCII format every 20 time steps. For more information on the specific parameters, I recommend consulting the [user guide](https://cfd.direct/openfoam/user-guide/v6-controldict/).
+2. The file fvSchemes. In this file, you can specify numerical schemes for the approximation of each derivate and the interpolation. In particular, the choice of the numerical scheme for the time derivate (ddtSchemes) determines if the simulation is of a steady-state solution (setting steadyState) or time-dependent (setting, for example, Euler). Note that it is possible to set a default scheme as well as specific ones for any variable.
