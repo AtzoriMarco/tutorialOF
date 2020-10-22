@@ -130,6 +130,7 @@ In every OpenFOAM case, three files in the system folder determine general setti
 ### 2.6 Run and (simple) post-processing
 To run the simulation, assuming that boundary and initial conditions are correct, as well as physical parameters and numerical settings, means to use the proper application. In this tutorial, you can simply use:
 > icoFoam  
+
 The log contains, for each time step:
 1. the mean and maximum Courant number.
 2. the residual and number of iterations for each of the iterative solvers. In particular, for the two components of the velocity and the pressure. The number of solution for the pressure (two, in this example) are the number of corrections of the PISO algorithm.
@@ -137,6 +138,9 @@ The log contains, for each time step:
 4. the time elapsed from the beginning of the simulation.
 
 The tutorial cavity with its default settings will create an outpost at five times (0.1, 0.2, 0.3, 0.4 and 0.5), which you can see after running the simulation.
+
+### Additional material:
+If you are interested in OpenFOAM, take advantage of the documentation available online. In particular, I recommend the official websites of different distributions of the code, such as [OpenFOAM foundation](https://openfoam.org/resources/) and [ESI-OpenCFD](https://openfoam.com/documentation/). You may also find of great interest tutorials created by consultants such as [Wolf Dynamics](http://www.wolfdynamics.com/tutorials.html).
 
 
 
