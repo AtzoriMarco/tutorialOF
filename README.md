@@ -9,7 +9,7 @@ Material for OpenFOAM tutorial.
 
 ## 1. Building instructions for OpenFOAM (and Paraview)
 
-Tested using the free version of *VMware* and *Ubuntu 20.04*. OpenFOAM (and Paraview) will take approx 3.3 Gb once compiled, take this into account. 
+Tested using the free version of **VMware** and **Ubuntu 20.04**. OpenFOAM (and Paraview) will take approx 3.3 Gb once compiled, take this into account. 
 
 ### 1.1 Install prerequisites for OpenFOAM
 
@@ -48,7 +48,7 @@ Note: The building process is fast on a parallel machine, but it will be quite s
 
 ### 1.7 (optional) create an alias
 
-Add at the end your bashrc (*~/.bashrc*) :
+Add at the end your bashrc (**~/.bashrc**) :
 
 > alias of7x="source $HOME/OpenFOAM/OpenFOAM-7/etc/bashrc"
 
@@ -56,13 +56,14 @@ Add at the end your bashrc (*~/.bashrc*) :
 
 ### 2.1. Copy one of the tutorials. 
 
-Loading OpenFOAM bashrc you define a set of variables, such as *$FOAM_TUTORIAL* and *$FOAM_RUN*, that helps to navigate the code. To run your first tutorial, create the "run" folder, and copy the tutorial cavity in it. You can use the following commands:
+Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIAL** and **$FOAM_RUN**, that help navigating the code. To run your first tutorial, create the **run** folder, and copy in it the tutorial *cavity* for the incompressible "laminar" solver **icoFoam**. You can use the following commands:
 
 > mkdir -p $FOAM_RUN  
 > tut  
 > cp -r incompressible/icoFoam/cavity/cavity $FOAM_RUN
 > run
-The commands tut and run move to $FOAM_TUTORIAL and $FOAM_RUN, respectively.
+
+Note that the commands **tut** and **run** move to **$FOAM_TUTORIAL** and **$FOAM_RUN**, respectively.
 
 ### 2.2 Structure of the case
 
