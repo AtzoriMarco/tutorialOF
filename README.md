@@ -125,3 +125,20 @@ Physical properties of the fluid, such as viscosity and density, are set in the 
 In every OpenFOAM case, three files in the system folder determine general settings of the simulation:
 1. The file controlDict. In this file, you can specify: start and end times of the simulation, time interval and output frequency, format and precision. In this example, the simulation will start at t=0 and end at t=0.5, using a time interval of 0.005 and writing a full outpost in ASCII format every 20 time steps. For more information on the specific parameters, I recommend consulting the [user guide](https://cfd.direct/openfoam/user-guide/v6-controldict/).
 2. The file fvSchemes. In this file, you can specify numerical schemes for the approximation of each derivate and the interpolation. In particular, the choice of the numerical scheme for the time derivate (ddtSchemes) determines if the simulation is of a steady-state solution (setting steadyState) or time-dependent (setting, for example, Euler). Note that it is possible to set a default scheme as well as specific ones for any variable.
+3. The file fvSolution. In this file, you can specify the iterative solvers used for matrix inversion as well as the number of specific settings of the algorithm used by the application (in this example, the *icoFoam* solver will use the [PISO algorithm](https://openfoamwiki.net/index.php/OpenFOAM_guide/The_PISO_algorithm_in_OpenFOAM) to solve the incompressible Navier-Stokes equation). 
+
+### 2.6 Run and (simple) post-processing
+To run the simulation, assuming that boundary and initial conditions are correct, as well as physical parameters and numerical settings, means to use the proper application. In this tutorial, you can simply use:
+> icoFoam  
+The log contains, for each time step:
+1. the mean and maximum Courant number.
+2. the residual and number of iterations for each of the iterative solvers. In particular, for the two components of the velocity and the pressure. The number of solution for the pressure (two, in this example) are the number of corrections of the PISO algorithm.
+3. the estimate of the continuity error.
+4. the time elapsed from the beginning of the simulation.
+
+The tutorial cavity with its default settings will create an outpost at five times (0.1, 0.2, 0.3, 0.4 and 0.5), which you can see after running the simulation.
+
+
+
+
+
