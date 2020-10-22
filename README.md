@@ -1,7 +1,13 @@
 # tutorialOF
-Material for OpenFOAM tutorial
+Material for OpenFOAM tutorial. 
 
-## Building instructions for OpenFOAM (and Paraview)
+## Table of contents
+
+1. Building instructions for OpenFOAM.
+2. Running your first case.
+
+
+## 1. Building instructions for OpenFOAM (and Paraview)
 
 Tested using the free version of *VMware* and *Ubuntu 20.04*. OpenFOAM (and Paraview) will take approx 3.3 Gb once compiled, take this into account. 
 
@@ -53,3 +59,16 @@ Add at the end your bashrc (*~/.bashrc*) :
 
 > alias of7x="source $HOME/OpenFOAM/OpenFOAM-7/etc/bashrc"
 
+## 2. Running your first case
+
+
+├── 0
+│   ├── p
+│   └── U
+├── constant
+│   └── transportProperties
+└── system
+    ├── blockMeshDict
+    ├── controlDict
+    ├── fvSchemes
+    └── fvSolution
