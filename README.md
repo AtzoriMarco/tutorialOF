@@ -5,7 +5,7 @@ Material for OpenFOAM tutorial.
 
 1. [Building instructions for OpenFOAM](https://github.com/AtzoriMarco/tutorialOF/blob/main/README.md#1-building-instructions-for-openfoam-and-paraview).
 2. [Running your first case](https://github.com/AtzoriMarco/tutorialOF#2-running-your-first-case).
-3. [Running your second case (with post-processing)]().
+3. [Running your second case (with post-processing)](https://github.com/AtzoriMarco/tutorialOF#3-running-your-second-case-with-post-processing).
 
 ## 1. Building instructions for OpenFOAM (and Paraview)
 
