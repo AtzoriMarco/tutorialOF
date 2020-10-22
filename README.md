@@ -27,7 +27,7 @@ Tested using the free version of *VMware* and *Ubuntu 20.04*. OpenFOAM (and Para
 > git clone https://github.com/OpenFOAM/OpenFOAM-7.git  
 > git clone https://github.com/OpenFOAM/ThirdParty-7.git  
 
-These set of commands should create a folder call OpenFOAM in your home and, inside this folder, the 2 folders *OpenFOAM-7* and *ThirdParty-7*.
+These set of commands should create the folder **OpenFOAM** in your home and, inside this folder, the 2 folders **OpenFOAM-7** and **ThirdParty-7**.
 
 ### 1.4 Load environmental variables
 
