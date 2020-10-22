@@ -62,13 +62,13 @@ Add at the end your bashrc (*~/.bashrc*) :
 ## 2. Running your first case
 
 
-├── 0
-│   ├── p
-│   └── U
-├── constant
-│   └── transportProperties
-└── system
-    ├── blockMeshDict
-    ├── controlDict
-    ├── fvSchemes
-    └── fvSolution
+>├── 0
+>│   ├── p
+>│   └── U
+>├── constant
+>│   └── transportProperties
+>└── system
+>    ├── blockMeshDict
+>    ├── controlDict
+>    ├── fvSchemes
+>    └── fvSolution
