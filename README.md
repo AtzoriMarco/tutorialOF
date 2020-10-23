@@ -4,8 +4,8 @@ Material for OpenFOAM tutorial.
 ## Table of contents
 
 1. [Building instructions for OpenFOAM](https://github.com/AtzoriMarco/tutorialOF/blob/main/README.md#1-building-instructions-for-openfoam-and-paraview).
-2. [Running your first case](https://github.com/AtzoriMarco/tutorialOF#2-running-your-first-case).
-3. [Running your second case (with post-processing)](https://github.com/AtzoriMarco/tutorialOF#3-running-your-second-case-with-post-processing).
+2. [Your first case](https://github.com/AtzoriMarco/tutorialOF#2-running-your-first-case).
+3. [Your second case (with post-processing)](https://github.com/AtzoriMarco/tutorialOF#3-running-your-second-case-with-post-processing).
 
 ## 1. Building instructions for OpenFOAM (and Paraview)
 
@@ -52,7 +52,7 @@ Add at the end your bashrc (**~/.bashrc**) :
 
 > alias of7x="source $HOME/OpenFOAM/OpenFOAM-7/etc/bashrc"
 
-## 2. Running your first case
+## 2. Your first case
 
 ### 2.1. Copy one of the tutorials. 
 
@@ -142,7 +142,7 @@ The tutorial cavity with its default settings will create an outpost at five tim
 ### Additional material:
 If you are interested in OpenFOAM, take advantage of the documentation available online. In particular, I recommend the official websites of different distributions of the code, such as [OpenFOAM foundation](https://openfoam.org/resources/) and [ESI-OpenCFD](https://openfoam.com/documentation/). You may also find of great interest tutorials created by consultants such as [Wolf Dynamics](http://www.wolfdynamics.com/tutorials.html).
 
-## 3 Running your second case (with post-processing)
+## 3 Your second case (with post-processing)
 
 
 
