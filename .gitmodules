@@ -1,3 +1,6 @@
 [submodule "pisoKinematicParcelFoam"]
 	path = pisoKinematicParcelFoam
 	url = https://github.com/AtzoriMarco/pisoKinematicParcelFoam.git
+[submodule "testNarges"]
+	path = testNarges
+	url = https://github.com/AtzoriMarco/testNarges.git
