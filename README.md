@@ -116,9 +116,9 @@ Initial and boundary conditions in OpenFOAM are assigned together, using the sam
 In this tutorial, the pressure, **p**, and the velocity, **U**, are the only variables.
 Note that physical vectors (such as **U**) are always three-dimensional in OpenFOAM. Running two-dimensional cases, such as "cavity", does not alter the dimensionality of vectors, but prevent solving the equations in one of the directions, which is identified by the keyword empty in the boundary conditions.
 Each of the "variable" files contain:
-1. the physical dimension of the variable, in units of the Internation System (second, metre, kilogram, ampere, kelvin, mole, candela). Note that each scalar or vector field is defined with its dimensions. Nonetheless, it is always possible to use OpenFOAM using "dimensionless" variables giving scaled values (as in this example).
-2. the value of the variable in the domain (internalField). In this example, the fluid is at rest at t=0.
-3. the boundary conditions, defined for each of the "boundaries" created in blockMesh.
+1. the physical dimension of the variable, in units of the International System (second, metre, kilogram, ampere, kelvin, mole, candela). Note that each scalar or vector field is defined with its dimensions. Nonetheless, it is always possible to use OpenFOAM using "dimensionless" variables giving scaled values (as in this example).
+2. the value of the variable in the domain (*internalField*). In this example, the fluid is at rest at t=0.
+3. the boundary conditions, defined for each of the "boundaries" created in **blockMesh**.
 
 Physical properties of the fluid, such as viscosity and density, are set in the dictionary transportProperties in the constant folder (in this case, only the kinematic viscosity is needed).
 
