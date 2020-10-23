@@ -97,7 +97,9 @@ The "dictionary" **blockMeshDict** contains the instructions for **blockMesh**. 
        1. a "name", which is arbitrary.  
        2. a "type", which must correspond to one of the types requested by boundary conditions.  
        3. the list of the block(s) "faces" which belong to the boundary, which are defined based on their vertices. Note that the vertices order is not arbitrary, but it must be such that they are in counter-clockwise order looking from outside the domain.  
-5. a list of "merging patch pairs", which is * [here](https://cfd.direct/openfoam/user-guide/v7-blockMesh/).  
+5. a list of "merging patch pairs", which is empty in this case.
+
+You can find more information on **blockMesh** [here](https://cfd.direct/openfoam/user-guide/v7-blockMesh/).  
 For more advanced examples of its capabilities, I suggest having a look at [this tutorial](http://www.wolfdynamics.com/wiki/meshing_OF_blockmesh.pdf) (from *Wolfdynamics*).
 
 Assuming a proper **blockMeshDict** is provided and located in the system folder, use the command:
@@ -137,7 +139,7 @@ The log contains, for each time step:
 3. the estimate of the continuity error.
 4. the time elapsed from the beginning of the simulation.
 
-The tutorial cavity with its default settings will create an outpost at five times (0.1, 0.2, 0.3, 0.4 and 0.5), which you can see after running the simulation.
+The tutorial cavity with its default settings will create an outpost of five times (0.1, 0.2, 0.3, 0.4 and 0.5), which you can see after running the simulation.
 
 ### Additional material:
 If you are interested in OpenFOAM, take advantage of the documentation available online. In particular, I recommend the official websites of different distributions of the code, such as [OpenFOAM foundation](https://openfoam.org/resources/) and [ESI-OpenCFD](https://openfoam.com/documentation/). You may also find of great interest tutorials created by consultants such as [Wolf Dynamics](http://www.wolfdynamics.com/tutorials.html).
