@@ -147,7 +147,7 @@ The tutorial cavity with its default settings will create an outpost of five tim
 ### Additional material:
 If you are interested in OpenFOAM, take advantage of the documentation available online. In particular, I recommend the official websites of different distributions of the code, such as [OpenFOAM foundation](https://openfoam.org/resources/) and [ESI-OpenCFD](https://openfoam.com/documentation/). You may also find of great interest tutorials created by consultants such as [Wolf Dynamics](http://www.wolfdynamics.com/tutorials.html).
 
-## 3 Your second case (with post-processing)
+## 3. Your second case (with post-processing)
 
 This case is based on the tutorial [pitzDaily](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/pitzDaily) ([Pitz and Daily, 1983](https://doi.org/10.2514/3.8290)) and the post-processing is based on that of the tutorial [T3A](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/T3A). 
 
@@ -203,7 +203,7 @@ Note that when the result a post-processing function is a field (i.e. it is defi
 
 A list of the possible post-processing functions that can be used in this way is provided [here](https://cfd.direct/openfoam/user-guide/v7-post-processing-cli/#x32-2400006.2.1).
 
-## 4 A new solver
+## 4. A new solver
 
 This solver is created combining [pisoFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/incompressible/pisoFoam) and [icoUncoupledKinematicParcelFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/icoUncoupledKinematicParcelFoam).
 
