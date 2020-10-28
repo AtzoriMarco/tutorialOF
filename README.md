@@ -205,5 +205,9 @@ A list of the possible post-processing functions that can be used in this way is
 
 ## 4. A new solver
 
+https://github.com/AtzoriMarco/pisoKinematicParcelFoam
+
 This solver is created combining [pisoFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/incompressible/pisoFoam) and [icoUncoupledKinematicParcelFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/icoUncoupledKinematicParcelFoam).
+
+
 
