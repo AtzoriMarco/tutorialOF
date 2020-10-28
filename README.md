@@ -178,11 +178,10 @@ The structure of the test case is:
 >    ├── streamlines  
 >    └── wallShearStressGraph  
 
-In this case, we will use the solver **simpleFoam**, which uses the [SIMPLE algorithm](https://openfoamwiki.net/index.php/The_SIMPLE_algorithm_in_OpenFOAM) to solve the incompressible N.S. eq., also including turbulence models. Note that this algorithm is typically employed to find steady-state solutions: **simpleFoam** is, therefore, the most common solver to perform RANS with OpenFOAM.
-
-The turbulence model can be selected in **turbulenceProperties**. Note that appropriate boundary and initial conditions for the variables of the model (in **0/**), as well as numerical schemes and algorithms for the corresponding transport equations (in **fvSchemes** and **fvSolution**, respectively), are required as well. 
-
-The dictionary **decomposeParDict** is required by the pre-processing utility **decomposePar**, which is employed for partitioning the domain (various algorithms are available).
+* In this case, we will use the solver **simpleFoam**, which uses the [SIMPLE algorithm](https://openfoamwiki.net/index.php/The_SIMPLE_algorithm_in_OpenFOAM) to solve the incompressible N.S. eq., also including turbulence models. Note that this algorithm is typically employed to find steady-state solutions: **simpleFoam** is, therefore, the most common solver to perform RANS with OpenFOAM.
+* A turbulence model has to be selected in **turbulenceProperties**. Note that appropriate boundary and initial conditions for the variables of the model (in **0/**), as well as numerical schemes and algorithms for the corresponding transport equations (in **fvSchemes** and **fvSolution**, respectively), are required as well.  
+* The dictionary **decomposeParDict** is required by the pre-processing utility **decomposePar**, which is employed for partitioning the domain (various algorithms are available).
+* The additional files streamlines and wallShearStressGraph are not actual dictionaries in a strict sense, and are included directly 
 
 ### 3.2 Run the case
 
