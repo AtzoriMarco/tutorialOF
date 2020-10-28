@@ -202,4 +202,7 @@ Note that when the result a post-processing function is a field (i.e. it is defi
 
 A list of the possible post-processing functions that can be used in this way is provided [here](https://cfd.direct/openfoam/user-guide/v7-post-processing-cli/#x32-2400006.2.1).
 
+## 4 A new solver
+
+This solver is created combining [pisoFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/incompressible/pisoFoam) and [icoUncoupledKinematicParcelFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/icoUncoupledKinematicParcelFoam).
 
