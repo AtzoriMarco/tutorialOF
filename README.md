@@ -54,6 +54,8 @@ Add at the end your bashrc (**~/.bashrc**) :
 
 ## 2. Your first case
 
+The standard tutorial [cavity](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/icoFoam/cavity/cavity).
+
 ### 2.1. Copy one of the tutorials. 
 
 Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIAL** and **$FOAM_RUN**, that help navigating the code. To run your first tutorial, create the **run** folder, and copy in it the tutorial *cavity* for the incompressible "laminar" solver **icoFoam**. You can use the following commands:
@@ -146,5 +148,49 @@ If you are interested in OpenFOAM, take advantage of the documentation available
 
 ## 3 Your second case (with post-processing)
 
+This tutorial is based on the tutorial [pitzDaily](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/pitzDaily) [(Pitz and Daily, 1983)](https://doi.org/10.2514/3.8290) and the post-processing is based on that of the tutorial [T3A](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/T3A). 
+
+### 3.1 Structure of the case
+
+The structure of the test case is:
+
+>.
+>├── **0**
+>│   ├── epsilon
+>│   ├── f
+>│   ├── k
+>│   ├── nut
+>│   ├── nuTilda
+>│   ├── omega
+>│   ├── p
+>│   ├── U
+>│   └── v2
+>├── **constant**
+>│   ├── transportProperties
+>│   └── turbulenceProperties
+>├── run.sh
+>└── **system**
+>    ├── blockMeshDict
+>    ├── controlDict
+>    ├── decomposeParDict
+>    ├── fvSchemes
+>    ├── fvSolution
+>    ├── streamlines
+>    └── wallShearStressGraph
+
+
+
+### 3.2 Run the case
+
+You can run the case using the script **run.sh** in the working directory. Note that **getApplication**, **runApplication**, and **runParallel** are standard utilities for OpenFOAM tutorials. 
+
+The result of **getApplication** corresponds to the "application" value in **controlDict**.
+
+OpenFOAM utility requires the **parallel** options to use multiple cores, so that the **runParallel** call in **run.sh** corresponds to:
+> mpirun -n $NCORES simpleFoam -parallel > log.simpleFoam
+
+The last line in the script **run.sh** is an example of how to use a solver in post-processing mode, and for the last time step only. In post-processing mode, the governing equations are not solved, but the functions in **controlDict** are evaluated. Note that this line is not redundant: with the current setup, the post-processing functions are called only for the standard outpost (determined by the **writeInterval** value in **controlDict**), but not for the time step when the simulation stops (determined by the **residualControl** values in **fvSolution**).
+
+### 3.3 
 
 
