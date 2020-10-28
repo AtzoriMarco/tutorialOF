@@ -193,4 +193,13 @@ You can run the case using the script **run.sh** in the working directory. **get
 
 ### 3.3 Post-processing
 
+Three post-processing functions are employed in this tutorial:
+1. **wallShearStress**, which computes the "wallShearStress" field for each saved time step, and does not require to set any parameter. The definition of this field is described, e.g., [here](https://www.openfoam.com/documentation/guides/latest/doc/guide-fos-field-wallShearStress.html);
+2. **sample**, which interpolates a given field on a set of points. In this case, the default dictionaries for this function ([sampleDict.cfg](https://github.com/OpenFOAM/OpenFOAM-7/blob/master/etc/caseDicts/postProcessing/graphs/sampleDict.cfg) and [graph.cfg](https://github.com/OpenFOAM/OpenFOAM-7/blob/master/etc/caseDicts/postProcessing/graphs/graph.cfg)) are used to create a new function called **wallShearStressGraph**, which samples the "wallShearStress" field along a line. 
+3. **streamlines**, which compute a list of streamlines and outpost the results as a point set in VTK format. In this case, the file **streamlines** contains the set of option required by this function, part of which are the default ones ([here](https://github.com/OpenFOAM/OpenFOAM-7/blob/master/etc/caseDicts/postProcessing/visualization/streamlines.cfg)).
+
+Note that when the result a post-processing function is a field (i.e. it is defined in principle for each grid point), it is written in the time-step folders. On the other hand, if it is defined on a set of points, it is written in a dedicated folder in **postProcessing/**. 
+
+A list of the possible post-processing functions that can be used in this way is provided [here](https://cfd.direct/openfoam/user-guide/v7-post-processing-cli/#x32-2400006.2.1).
+
 
