@@ -91,7 +91,7 @@ OpenFOAM provides two pre-processing utilities for mesh creation: **blockMesh**,
 
 The "dictionary" **blockMeshDict** contains the instructions for **blockMesh**. In this file, the user must specify:  
 1. a list of "vertices", including their coordinates. Note that each vertex will be identified later on with its position in this list.   
-2. a list of the "blocks" which constitutes the mesh. In this example, you see only one hexahedral block, which will contain 20 cells in the x and y directions, and one cell in the z direction. Note that you can use different cell spacing. In this case, the mode *simpleGrading* and the option (1,1,1) will give uniform spacing.  
+2. a list of the "blocks" which constitutes the mesh. In this example, you see only one hexahedral block, which will contain 20 cells in the x and y directions, and one cell in the z direction. Note that you can use different cell spacing. In this case, the mode **simpleGrading** and the option (1,1,1) will give uniform spacing.  
 3. a list of "edges", with appropriate definition, if the sides of the blocks have a particular shape. In this case, since the side of the block are plane, no edges are required.
 4. a list of "boundaries", which will correspond to the faces of the block where it is needed to impose boundary conditions. Each boundary requires:
        1. a "name", which is arbitrary.  
@@ -117,7 +117,7 @@ In this tutorial, the pressure, **p**, and the velocity, **U**, are the only var
 Note that physical vectors (such as **U**) are always three-dimensional in OpenFOAM. Running two-dimensional cases, such as "cavity", does not alter the dimensionality of vectors, but prevent solving the equations in one of the directions, which is identified by the keyword empty in the boundary conditions.
 Each of the "variable" files contain:
 1. the physical dimension of the variable, in units of the International System (second, metre, kilogram, ampere, kelvin, mole, candela). Note that each scalar or vector field is defined with its dimensions. Nonetheless, it is always possible to use OpenFOAM using "dimensionless" variables giving scaled values (as in this example).
-2. the value of the variable in the domain (*internalField*). In this example, the fluid is at rest at t=0.
+2. the value of the variable in the domain (**internalField**). In this example, the fluid is at rest at t=0.
 3. the boundary conditions, defined for each of the "boundaries" created in **blockMesh**.
 
 Physical properties of the fluid, such as viscosity and density, are set in the dictionary transportProperties in the constant folder (in this case, only the kinematic viscosity is needed).
@@ -125,9 +125,9 @@ Physical properties of the fluid, such as viscosity and density, are set in the 
 
 ### 2.5 General settings
 In every OpenFOAM case, three files in the system folder determine general settings of the simulation:
-1. The file controlDict. In this file, you can specify: start and end times of the simulation, time interval and output frequency, format and precision. In this example, the simulation will start at t=0 and end at t=0.5, using a time interval of 0.005 and writing a full outpost in ASCII format every 20 time steps. For more information on the specific parameters, I recommend consulting the [user guide](https://cfd.direct/openfoam/user-guide/v6-controldict/).
-2. The file fvSchemes. In this file, you can specify numerical schemes for the approximation of each derivate and the interpolation. In particular, the choice of the numerical scheme for the time derivate (ddtSchemes) determines if the simulation is of a steady-state solution (setting steadyState) or time-dependent (setting, for example, Euler). Note that it is possible to set a default scheme as well as specific ones for any variable.
-3. The file fvSolution. In this file, you can specify the iterative solvers used for matrix inversion as well as the number of specific settings of the algorithm used by the application (in this example, the **icoFoam** solver will use the [PISO algorithm](https://openfoamwiki.net/index.php/OpenFOAM_guide/The_PISO_algorithm_in_OpenFOAM) to solve the incompressible Navier-Stokes equation). 
+1. The file **controlDict**. In this file, you can specify: start and end times of the simulation, time interval and output frequency, format and precision. In this example, the simulation will start at t=0 and end at t=0.5, using a time interval of 0.005 and writing a full outpost in ASCII format every 20 time steps. For more information on the specific parameters, I recommend consulting the [user guide](https://cfd.direct/openfoam/user-guide/v6-controldict/).
+2. The file **fvSchemes**. In this file, you can specify numerical schemes for the approximation of each derivate and the interpolation. In particular, the choice of the numerical scheme for the time derivate (**ddtSchemes**) determines if the simulation is of a steady-state solution (setting **steadyState**) or time-dependent (setting, for example, **Euler**). Note that it is possible to set a default scheme as well as specific ones for any variable.
+3. The file **fvSolution**. In this file, you can specify the iterative solvers used for matrix inversion as well as the number of specific settings of the algorithm used by the application (in this example, the **icoFoam** solver will use the [PISO algorithm](https://openfoamwiki.net/index.php/OpenFOAM_guide/The_PISO_algorithm_in_OpenFOAM) to solve the incompressible Navier-Stokes equation). 
 
 ### 2.6 Run and (simple) post-processing
 To run the simulation, assuming that boundary and initial conditions are correct, as well as physical parameters and numerical settings, means to use the proper application. In this tutorial, you can simply use:
