@@ -154,29 +154,29 @@ This tutorial is based on the tutorial [pitzDaily](https://github.com/OpenFOAM/O
 
 The structure of the test case is:
 
->.
->├── **0**
->│   ├── epsilon
->│   ├── f
->│   ├── k
->│   ├── nut
->│   ├── nuTilda
->│   ├── omega
->│   ├── p
->│   ├── U
->│   └── v2
->├── **constant**
->│   ├── transportProperties
->│   └── turbulenceProperties
->├── run.sh
->└── **system**
->    ├── blockMeshDict
->    ├── controlDict
->    ├── decomposeParDict
->    ├── fvSchemes
->    ├── fvSolution
->    ├── streamlines
->    └── wallShearStressGraph
+>.  
+>├── **0**  
+>│   ├── epsilon  
+>│   ├── f  
+>│   ├── k  
+>│   ├── nut  
+>│   ├── nuTilda  
+>│   ├── omega  
+>│   ├── p  
+>│   ├── U  
+>│   └── v2  
+>├── **constant**  
+>│   ├── transportProperties  
+>│   └── turbulenceProperties  
+>├── run.sh  
+>└── **system**  
+>    ├── blockMeshDict  
+>    ├── controlDict  
+>    ├── decomposeParDict  
+>    ├── fvSchemes  
+>    ├── fvSolution  
+>    ├── streamlines  
+>    └── wallShearStressGraph  
 
 
 
