@@ -83,9 +83,9 @@ Entering cavity, you will see the following files and folders
 >    └── fvSolution  
 
 Every OpenFOAM case contains:
-1) at least one folder for the physical fields, corresponding to a certain simulation time. In this case, the **0** folder, with the (initial) values of velocity (file **U**) and pressure (file **p**).  
-2) one folder, named **constant**, containing parameters pertaining to the physical properties of the system, such as the viscosity (file **transportProperties**). This folder will also contain the mesh.  
-3) one folder, named **system**, providing the settings for numerical discretization and iterative solvers (files **fvSchemes** and **fvSolution**, respectively), the basic information (file **controlDict**), as well as additional "dictionaries" for pre- or post-processing utilities (in this case, the file **blockMeshDict**).  
+1) at least one folder for the physical fields, corresponding to a certain simulation time. In this case, the **0/** folder, with the (initial) values of velocity (file **U**) and pressure (file **p**).  
+2) one folder, named **constant/**, containing parameters pertaining to the physical properties of the system, such as the viscosity (file **transportProperties**). This folder will also contain the mesh.  
+3) one folder, named **system/**, providing the settings for numerical discretization and iterative solvers (files **fvSchemes** and **fvSolution**, respectively), the basic information (file **controlDict**), as well as additional "dictionaries" for pre- or post-processing utilities (in this case, the file **blockMeshDict**).  
 
 ### 2.3 Create a Mesh
 
@@ -113,7 +113,7 @@ Note that, after creating a mesh, either with **blockMesh**, **snappyHexMesh** o
 
 ### 2.4 Boundary conditions and Physical properties
 
-Initial and boundary conditions in OpenFOAM are assigned together, using the same files that also contain the values of the physical variables. Such files have a common structure and are located in folders named after the corresponding time step - typically **0** for the initial condition.
+Initial and boundary conditions in OpenFOAM are assigned together, using the same files that also contain the values of the physical variables. Such files have a common structure and are located in folders named after the corresponding time step - typically **0/** for the initial condition.
 
 In this tutorial, the pressure, **p**, and the velocity, **U**, are the only variables.
 Note that physical vectors (such as **U**) are always three-dimensional in OpenFOAM. Running two-dimensional cases, such as "cavity", does not alter the dimensionality of vectors, but prevent solving the equations in one of the directions, which is identified by the keyword empty in the boundary conditions.
@@ -129,7 +129,7 @@ Physical properties of the fluid, such as viscosity and density, are set in the 
 In every OpenFOAM case, three files in the system folder determine general settings of the simulation:
 1. The file **controlDict**. In this file, you can specify: start and end times of the simulation, time interval and output frequency, format and precision. In this example, the simulation will start at t=0 and end at t=0.5, using a time interval of 0.005 and writing a full outpost in ASCII format every 20 time steps. For more information on the specific parameters, I recommend consulting the [user guide](https://cfd.direct/openfoam/user-guide/v6-controldict/).
 2. The file **fvSchemes**. In this file, you can specify numerical schemes for the approximation of each derivate and the interpolation. In particular, the choice of the numerical scheme for the time derivate (**ddtSchemes**) determines if the simulation is of a steady-state solution (setting **steadyState**) or time-dependent (setting, for example, **Euler**). Note that it is possible to set a default scheme as well as specific ones for any variable.
-3. The file **fvSolution**. In this file, you can specify the iterative solvers used for matrix inversion as well as the number of specific settings of the algorithm used by the application (in this example, the **icoFoam** solver will use the [PISO algorithm](https://openfoamwiki.net/index.php/OpenFOAM_guide/The_PISO_algorithm_in_OpenFOAM) to solve the incompressible Navier-Stokes equation). 
+3. The file **fvSolution**. In this file, you can specify the iterative solvers used for matrix inversion as well as the number of specific settings of the algorithm used by the application (in this example, the solver **icoFoam**, which employes the [PISO algorithm](https://openfoamwiki.net/index.php/OpenFOAM_guide/The_PISO_algorithm_in_OpenFOAM) to solve the incompressible Navier-Stokes equation). 
 
 ### 2.6 Run and (simple) post-processing
 To run the simulation, assuming that boundary and initial conditions are correct, as well as physical parameters and numerical settings, means to use the proper application. In this tutorial, you can simply use:
@@ -148,7 +148,7 @@ If you are interested in OpenFOAM, take advantage of the documentation available
 
 ## 3 Your second case (with post-processing)
 
-This tutorial is based on the tutorial [pitzDaily](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/pitzDaily) [(Pitz and Daily, 1983)](https://doi.org/10.2514/3.8290) and the post-processing is based on that of the tutorial [T3A](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/T3A). 
+This case is based on the tutorial [pitzDaily](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/pitzDaily) ([Pitz and Daily, 1983](https://doi.org/10.2514/3.8290)) and the post-processing is based on that of the tutorial [T3A](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/tutorials/incompressible/simpleFoam/T3A). 
 
 ### 3.1 Structure of the case
 
@@ -178,19 +178,20 @@ The structure of the test case is:
 >    ├── streamlines  
 >    └── wallShearStressGraph  
 
+In this case, we will use the solver **simpleFoam**, which uses the [SIMPLE algorithm](https://openfoamwiki.net/index.php/The_SIMPLE_algorithm_in_OpenFOAM) to solve the incompressible N.S. eq., also including turbulence models. Note that this algorithm is typically employed to find steady-state solutions: **simpleFoam** is, therefore, the most common solver to perform RANS with OpenFOAM.
 
+The turbulence model can be selected in **turbulenceProperties**. Note that appropriate boundary and initial conditions for the variables of the model (in **0/**), as well as numerical schemes and algorithms for the corresponding transport equations (in **fvSchemes** and **fvSolution**, respectively), are required as well. 
+
+The dictionary **decomposeParDict** is required by the pre-processing utility **decomposePar**, which is employed for partitioning the domain (various algorithms are available).
 
 ### 3.2 Run the case
 
-You can run the case using the script **run.sh** in the working directory. Note that **getApplication**, **runApplication**, and **runParallel** are standard utilities for OpenFOAM tutorials. 
-
-The result of **getApplication** corresponds to the "application" value in **controlDict**.
-
-OpenFOAM utility requires the **parallel** options to use multiple cores, so that the **runParallel** call in **run.sh** corresponds to:
+You can run the case using the script **run.sh** in the working directory. **getApplication**, **runApplication**, and **runParallel** are standard utilities for OpenFOAM tutorials. Note that:
+* The result of **getApplication** corresponds to the "application" value in **controlDict**.
+* OpenFOAM executables requires the **parallel** option to use multiple cores, thus the **runParallel** call in **run.sh** corresponds to:
 > mpirun -n $NCORES simpleFoam -parallel > log.simpleFoam
+* The last line in the script **run.sh** is an example of how to use a solver in post-processing mode, and for the last time step only. In post-processing mode, the governing equations are not solved, but the functions in **controlDict** are evaluated. Note that this line is not redundant: with the current setup, the post-processing functions are called only for the standard outpost (determined by the **writeInterval** value in **controlDict**), but not for the time step when the simulation stops (determined by the **residualControl** values in **fvSolution**).
 
-The last line in the script **run.sh** is an example of how to use a solver in post-processing mode, and for the last time step only. In post-processing mode, the governing equations are not solved, but the functions in **controlDict** are evaluated. Note that this line is not redundant: with the current setup, the post-processing functions are called only for the standard outpost (determined by the **writeInterval** value in **controlDict**), but not for the time step when the simulation stops (determined by the **residualControl** values in **fvSolution**).
-
-### 3.3 
+### 3.3 Post-processing
 
 
