@@ -32,7 +32,7 @@ These set of commands should create the folder **OpenFOAM** in your home and, in
 
 ### 1.4 Load environmental variables
 
-> source OpenFOAM/OpenFOAM-7/etc/bashrc  
+> source OpenFOAM-7/etc/bashrc  
 
 ### 1.5 (parallel) compilation, for OpenFOAM
 
