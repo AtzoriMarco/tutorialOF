@@ -10,7 +10,7 @@ Material for OpenFOAM tutorial.
 
 ## 1. Building instructions for OpenFOAM (and Paraview)
 
-Tested using the free version of **VMware** and **Ubuntu 20.04**. OpenFOAM (and Paraview) will take approx 3.3 Gb once compiled, take this into account. 
+Tested using the free version of **VMware** [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) and **VirtualBox** [here](https://www.virtualbox.org/wiki/Downloads) , with **Ubuntu 20.04** [here](http://www.releases.ubuntu.com/20.04/). OpenFOAM (and Paraview) will take approx 3.3 Gb once compiled, take this into account. 
 
 ### 1.1 Install prerequisites for OpenFOAM
 
