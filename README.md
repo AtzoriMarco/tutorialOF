@@ -20,6 +20,8 @@ Tested using the free version of [VMware](https://www.vmware.com/products/workst
 
 > sudo apt-get install libqt5x11extras5-dev libxt-dev qt5-default qttools5-dev curl
 
+(For more recent version of Ubuntu, check: https://askubuntu.com/questions/1335184/qt5-default-not-in-ubuntu-21-04 )
+
 ### 1.3 create folder and download source code
 
 > cd  
