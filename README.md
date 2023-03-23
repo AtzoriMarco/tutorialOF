@@ -67,6 +67,7 @@ Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIAL** a
 > tut  
 > cp -r incompressible/icoFoam/cavity/cavity $FOAM_RUN
 > run
+>
 
 Note that the commands **tut** and **run** move to **$FOAM_TUTORIAL** and **$FOAM_RUN**, respectively.
 
