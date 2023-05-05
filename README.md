@@ -61,7 +61,7 @@ The standard tutorial [cavity](https://github.com/OpenFOAM/OpenFOAM-7/tree/maste
 
 ### 2.1. Copy one of the tutorials. 
 
-Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIAL** and **$FOAM_RUN**, that help navigating the code. To run your first tutorial, create the **run** folder, and copy in it the tutorial *cavity* for the incompressible "laminar" solver **icoFoam**. You can use the following commands:
+Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIALS** and **$FOAM_RUN**, that help navigating the code. To run your first tutorial, create the **run** folder, and copy in it the tutorial *cavity* for the incompressible "laminar" solver **icoFoam**. You can use the following commands:
 
 > mkdir -p $FOAM_RUN  
 > tut  
@@ -69,7 +69,7 @@ Loading OpenFOAM bashrc defines a set of variables, such as **$FOAM_TUTORIAL** a
 >
 > run
 
-Note that the commands **tut** and **run** move to **$FOAM_TUTORIAL** and **$FOAM_RUN**, respectively.
+Note that the commands **tut** and **run** move to **$FOAM_TUTORIALS** and **$FOAM_RUN**, respectively.
 
 ### 2.2 Structure of the case
 
