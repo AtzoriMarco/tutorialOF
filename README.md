@@ -1,5 +1,4 @@
 # tutorialOF
-Material for OpenFOAM tutorial. 
 
 ## Table of contents
 
